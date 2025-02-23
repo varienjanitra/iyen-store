@@ -3,12 +3,12 @@
     <mat-icon>menu</mat-icon>
   </button>
   <span>Iyen Store</span>
-  <button mat-icon-button>
+  <button mat-icon-button (click)="onHomeButtonClick()">
     <mat-icon>home</mat-icon>
   </button>
   <mat-form-field class="search-bar" subscriptSizing="dynamic">
-    <input matInput type="search">
-    <button matSuffix mat-icon-button aria-label="Search">
+    <input matInput type="search" [(ngModel)]="searchString" (keyup.enter)="onSearch()">
+    <button matSuffix mat-icon-button aria-label="Search" (click)="onSearch()">
       <mat-icon>search</mat-icon>
     </button>
   </mat-form-field>
