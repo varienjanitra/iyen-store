@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, EventEmitter, input, Input, Output, output, ViewEncapsulation } from '@angular/core';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -21,4 +21,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 })
 export class NavbarComponent {
 
+  @Input() isSideNavOpened: boolean = false;
+  @Output() isSideNavOpenedChange = new EventEmitter<boolean>();
+
+  onSideNavButtonClick() {
+    this.isSideNavOpenedChange.emit(!this.isSideNavOpened);
+  }
 }
