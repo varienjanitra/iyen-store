@@ -1,2 +1,15 @@
-<p>search works!</p>
-<div>You searched for: {{ searchString() }}</div>
+
+@if(searchResult().length > 0) {
+  @if(searchString() == "**showall**") {
+    <div>Showing all available items on the store ({{ searchResult().length }} items)</div>
+  } @else {
+    <div>Your search for "{{ searchString() }}" results in {{ searchResult().length }} items </div>
+  }
+  <div class="search-result-container">
+    @for(itemized of searchResult(); track itemized.id) {
+      <istore-item-search-card [item]="itemized"></istore-item-search-card>
+    }
+  </div>
+} @else {
+  <div>Your search for "{{ searchString() }}" does not return any results</div>
+}

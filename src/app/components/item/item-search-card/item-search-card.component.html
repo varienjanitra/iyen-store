@@ -1,0 +1,18 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <div class="item-name">
+        {{ item()?.name | truncate:50:'...' }}
+      </div>
+    </mat-card-title>
+    <mat-card-subtitle></mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <img mat-card-md-image src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png">
+    <div class="item-description">{{ item()?.description | truncate:50:'...' }}</div>
+  </mat-card-content>
+  <mat-card-actions  align="end">
+    <button mat-button>{{ item()?.price | currency: 'IDR' }}</button>
+  </mat-card-actions>
+</mat-card>

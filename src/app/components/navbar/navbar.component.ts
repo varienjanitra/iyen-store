@@ -42,7 +42,7 @@ export class NavbarComponent {
 
   onSearch() {
     console.log(this.searchString);
-    this.searchService.searchItem(this.searchString);
+    this.searchService.setSearchQuery(this.searchString);
     this.routerService.navigate(['search']);
   }
 }
